@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input tag</title>
+</head>
+<body>
+    <form>
+
+    <div><input> <!-- 기본값: type="text"--></div>
+    <div><input type="text" value="hello world!" name="username" id="username"></div> <!-- value: 기본값-->
+    <input type="password">
+    <br>
+    <input type="checkbox"> 개인정보 동의
+    <br>
+    성별: 남<input type="radio" name="gender" checked> 여<input type="radio" name="gender">
+    <br>
+    <select name="status">
+        <option value="0">최상</option> <!-- value값으로 데이터 전달-->
+        <option value="1">상</option>
+        <option value="2" selected>중</option> <!-- selected: 사용자가 뒤로가기 등 했을때, 입력했었던 데이터 유지용-->
+        <option value="3">하</option>
+        <option value="4">최하</option>
+    </select> 상태
+    <br>
+    <input type="file"> <!-- 파일의 경로는 보이지 않음-->
+    <br>
+    <textarea></textarea>
+    <input type="hidden" value="hello" name="memberid"> <!-- 사용자에게 보이지 않지만, 서버에 정보를 보낼 때(name이 있어야만 전달)-->
+    <br>
+    <input type="date">
+    <br>
+    <input type="datetime-local">
+    <br>
+    <input type="time">
+    <br>
+    <input type="month">
+    <br>
+    <input type="week">
+    <br>
+    <input type="email" value="메일">
+    <br>
+    <!-- https://www.naver.com/intro/intro.html -->
+    <!-- 프로토콜 도메인        경로  파일이름 -->
+    <input type="url" value="주소">
+    <br>
+    <input type="number" value="12345">
+    <br>
+    <input type="tel" value="010-0000-0000">
+    <br>
+    <input type="range" min="0" max="100" value="20">
+    <div><input type="submit" value="회원가입"></div>
+    <input type="reset">
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneTrueLayout</title>
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+            width: 600px;
+            margin: auto;
+            }
+
+        #header {
+            width: 600px;
+            height: 150px;
+            text-align: center;
+            line-height: 40px;
+            /* background-color: orange; */
+        }
+        #wrap {
+            width: 600px;
+            overflow: hidden;
+        }
+        #aside {
+            width: 100px;
+            height: 700px;
+            /* background-color: aqua; */
+            float: right;
+        }
+        #main {
+            width: 490px;
+            height: 700px;
+            /* background-color: green; */
+            background-image: url('/image/걸어\ 간다고\ 늦지는\ 않아.jfif');
+            background-size: cover;
+            float: left;
+        }
+        #footer {
+            width: 600px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            /* background-color: orangered; */
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        h3 {
+            color: orange;
+        }
+
+        #search {
+            /* overflow: auto; */
+            position: relative;
+        }
+        .search1 {
+            position: absolute;
+            right: 50px;
+        }
+        .search2 {
+            position: absolute;
+            right: 5px;
+        }
+        #aside {
+            position: relative;
+        }
+        #aside_menu {
+            position: absolute;
+            bottom: 20px;
+        }
+
+        #footer {
+            position: relative;
+        }
+        #sitemap {
+            position: absolute;
+            right: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h3>자바일보</h3>
+
+        <div id="search">|
+            <a href="#">사회</a> |
+            <a href="#">경제</a> |
+            <a href="#">IT</a> |
+            <a href="#">문화</a> |
+            <a href="#">종교</a> |
+            <br>
+            <input placeholder="검색어를 입력하세요" class="search1">
+            
+            <form action="/image/행운의편지.jpeg">
+            <input type="submit" value="검색" class="search2">
+            </form>
+        </div>
+    </div>
+
+    <a href="/image/행운의편지.jpeg">
+    <div id="wrap">
+        <div id="main">
+
+        </div>
+        <div id="aside">
+            <div id="aside_menu">
+            [오늘의 날씨]
+            <br><br>
+            맑음 / 26ºC
+            <br><br>
+            <hr>
+        
+            [환율]
+            <br><br>
+            1384.59원
+            <br><br>
+            <hr>
+
+            [네이버지도]
+            <br><br><br><br><br>
+            <hr>
+
+            [방문자수]
+            <br><br>
+            어제: 81명
+            <br>
+            오늘: 9명
+            <br>
+            누적: 4130명
+
+            </div>
+        </div>
+    </div>
+    </a>
+
+    <div id="footer">
+        <div id="as">
+            <a href="https://www.naver.com/policy/service.html"> 이용약관 </a>
+            <a href="https://www.naver.com/policy/privacy.html"> 개인정보처리방침 </a>
+            <a href="https://help.naver.com/l"> 고객센터 </a>
+        </div>
+        <div id="sitemap">
+            <select>
+                <option>네이버</option>
+                <option>구글</option>
+                <option>다음</option>
+                <option>야후</option>
+                <option>정부24</option>
+            </select> 사이트맵
+        </div>
+
+    </div>
+    
+
+
+</body>
+</html>

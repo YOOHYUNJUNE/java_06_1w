@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조 선택자</title>
+    <style>
+/* 
+        #main>h1 {
+            background-color: yellow;
+        }
+        #main>ul h2 {
+            color: red;
+        }
+        #main>h2 {
+            background-color: green;
+        }
+        #main h2 {
+            font-style: italic;
+        } */
+        #main h1, #main h2 {
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>선택자 예제</h1>
+    <div id="main">
+        <h1>CSS 선택자</h1>
+        <h2>범위 선택자</h2>
+        <ul>
+            <li><h1>자손 선택자</h1></li>
+            <li><h2>후손 선택자</h2></li>
+            <li>동위 선택자</li>
+        </ul>
+    </div>
+    <h1>선택자 예제</h1>
+    <h2>sub title</h2>
+    <h1>선택자 예제</h1>
+    <h2>sub title</h2>
+    <h1>선택자 예제</h1>
+    <h2>sub title</h2>
+    <h1>선택자 예제</h1>
+    <h2>sub title</h2>
+
+</body>
+</html>

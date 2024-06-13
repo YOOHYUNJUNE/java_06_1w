@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid3</title>
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+        }
+
+        .container {
+            border: 1px solid yellow;
+            width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "sidebar-left main sidebar-right"
+                "footer footer footer";
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: auto 1fr auto;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: orange;
+            color: white;
+            text-align: center;
+            height: 50px;
+        }
+        .sidebar-left {
+            grid-area: sidebar-left;
+            width: 150px;
+            background-color: beige;
+            color: black;
+        }
+        .sidebar-right {
+            grid-area: sidebar-right;
+            width: 150px;
+            background-color: beige;
+            color: black;
+        }
+        .main {
+            background-color: aqua;
+            grid-area: main;
+        }
+        .footer {
+            background-color: orange;
+            grid-area: footer;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">header</div>
+        <div class="sidebar-left">
+            <ul>
+                <li>1111</li>
+                <li>2222</li>
+                <li>3333</li>
+            </ul>
+        </div>
+        <div class="main">
+            <h1>main</h1>
+            <h1>main</h1>
+            <h1>main</h1>
+            <h1>main</h1>
+        </div>
+        <div class="sidebar-right">            
+            <ul>
+                <li>1111</li>
+                <li>2222</li>
+                <li>3333</li>
+                <li>4444</li>
+                <li>5555</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <h3>footer</h3>
+            <h3>footer</h3>
+        </div>
+    </div> 
+
+</body>
+</html>

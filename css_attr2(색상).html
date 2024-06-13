@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ratio</title>
+    <style>
+        
+        div {
+            width: 50%;
+            height: 30px;
+            border: 1px solid black;
+            margin: 10px; /* 태그 간 간격 */
+        }
+        div:nth-child(1):hover {
+            /* background-color: aqua; */
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        div:nth-child(2) {
+            background-color: #fad; /* 00~FF */
+        }
+        div:nth-child(3) {
+            background-color: rgb(0, 222, 111); /* 0~255 */
+        }
+        div:nth-child(4) {
+            background-color: rgba(0, 0, 0, 0.1); /* alpha:투명도(0~1) */
+        }
+
+        header {
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>box -1</div>
+    <div>box -2</div>
+    <div>box -3</div>
+    <header>
+        <div>box -4</div>
+        <div>box -5</div>
+    </header>
+
+</body>
+</html>

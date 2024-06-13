@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS_flex2</title>
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+        }
+
+        #container {
+            margin: 0 auto;
+            padding: 0;
+            width: 800px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* flex를 이용하여 header와 footer가 각각 위, 아래에 위치 */
+        header,
+        footer {
+            background-color: aqua;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        main {
+            display: flex;
+        }
+        div.content {
+            flex: 1;
+        }
+
+        aside {
+            width: 150px;
+            background-color: greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h3>header</h3>
+
+        </header>
+        <main>
+            <aside>aside1</aside>
+            <div class="content">
+                <h4>content</h4>
+                <h4>content</h4>
+                <h4>content</h4>
+                <h4>content</h4>
+                <h4>content</h4>
+                <h4>content</h4>
+
+            </div>
+            <aside>aside2</aside>
+        </main>
+        <footer>footer</footer>
+
+
+    </div>
+
+    
+</body>
+</html>

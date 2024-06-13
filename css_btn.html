@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTN</title>
+
+    <style>
+
+        #btn {
+            margin: 200px auto;
+            background-color: orange;
+            width: 250px;
+            height: 150px;
+            border: 20px solid beige;
+            border-radius: 40px;
+        }
+        #btn>a {
+            display: block;
+            text-decoration: none;
+            height: 150px;
+            text-align: center;
+            line-height: 150px; /* 한 줄의 높이(수직 정렬에 사용) */
+            font-size: 50px;
+            font-style: italic;
+            font-weight: bold;
+            cursor: grab; /* hover하면 커서 변경 */
+        }
+        #btn:hover {
+            background-color: orangered;
+            border: 20px solid burlywood;
+        }
+
+        .fs-32 {font-size: 32px;}
+        .fs-2m {font-size: 2em;}
+        .fs-lg {font-size: large;}
+        .fs-sm {font-size: small;}
+
+        .font_gs {font-family: '궁서체';} /* 없는 서체는 기본 서체로 적용 */
+
+    </style>
+
+</head>
+<body>
+
+    <h3 class="fs-32 font_gs">안녕하세요</h3>
+    <h3 class="fs-2m">안녕하세요</h3>
+    <h3 class="fs-lg">안녕하세요</h3>
+    <h3 class="fs-sm">안녕하세요</h3>
+    
+    <div id="btn">
+        <a>Click</a>
+    </div>
+    
+</body>
+</html>

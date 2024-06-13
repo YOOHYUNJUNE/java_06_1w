@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* * {
+            color: blue;
+            margin: 0;
+            padding: 0;
+        } */
+    </style>
+    <style>
+        /* 태그선택자 */
+        h1 {
+            color: red;
+        }
+        p {
+            color: blue;
+        }
+        h1, p {
+            text-align: center;
+        }
+        body, p, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ID 선택자 */
+        #header {
+            background-color: aqua;
+            border: 5px solid black; /* 1px: 두께 / solid: 모양(실선) / 컬러 */
+            height: 50px;
+        }
+        #footer, p, #main {
+            background-color: greenyellow;
+            border: 4px solid blue;
+        }
+
+        /* 클래스 선택자 */
+        .box {
+            width: 50px;
+            height: 50px;
+            border: 3px solid silver;
+        }
+        .title {
+            font-weight: bold;
+            font-style: italic;
+            font-size: 12px;
+        }
+        
+        input[type=text] {
+            background-color: aqua;
+        }
+        input[type=password] {
+            background-color: blueviolet;
+        }
+        img[src$=png] {
+            border: 3px solid violet;
+        }
+        img[src$=jpg] {
+            border: 3px solid orange;
+        }
+        img[src$=gif] {
+            border: 3px solid red;
+        }
+
+        /* 구조 선택자 */
+        /* header>div>li */
+        header div li {
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>CSS 구조 선택자: 자손, 후손</h1>
+            <h2>선택자</h2>
+            <ul>
+                <li>전체 선택자</li>
+                <li>태그 선택자</li>
+                <li>ID, Class 선택자</li>
+            </ul>
+        </div>
+    </header>
+    <hr>
+    
+    <img src="a.png" width="100" height="150"> 
+    <img src="/image/mini.jpg" width="100" height="150"> 
+    <img src="a.gif" width="100" height="150"> 
+    <br>
+    
+    <input type="text">
+    <br>
+    <input type="password">
+    <hr>
+    
+    <!-- 큐브 박스 -->
+    <div class="box title">box1</div> <!-- class 다중 지정 가능-->
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+
+    <span class="box">1</span><span class="box">2</span>
+    <br>
+    <span class="box">1</span><span class="box">2</span>
+
+    <div id="header">header</div>
+    <div id="nav">nav</div>
+    <div id="aside">aside</div>
+    <div id="main" class="box">main</div>
+    <div id="footer">footer</div>
+
+    <h1>엔씨소프트 박병무의 분사 시나리오</h1>
+    <p>엔씨소프트(이하 엔씨)가 비용 절감과 인력 감축으로 몸집을 줄일 방침이다.</p>
+    <h1>test</h1>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>absolute</title>
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 3px solid yellow;
+            background-image: url('/image/mini.jpg');
+            border-radius: 50%;
+            /* 모든 요소 위치 시작점으로 */
+            position: absolute;
+        }
+        #box1 {
+            background-color: red;
+            left: 5px;
+            top: 5px;
+        }
+        #box2 {
+            background-color: blue;
+            left: 10px;
+            top: 10px;
+        }
+        #box3 {
+            background-color: aqua;
+            left: 15px;
+            top: 15px;
+        }
+
+        #wrap {
+            position: relative;
+            height: 50px;
+            width: 250px;
+            border: 2px solid white;
+            /* 영역 한정 */
+            overflow: auto;
+        }
+
+        #wrap2 {
+            background-color: #555;
+            width: 50%;
+            height: 540px;
+            border: 5px solid white;
+            position: relative /* 안에서 다른 요소들이 위치 조정하게 */
+        }
+        #img1 {
+            left: 5px;
+            top: 5px;
+        }
+        #img2 {
+            right: 5px;
+            top: 5px;
+        }
+        #img3 {
+            left: 5px;
+            bottom: 5px;
+        }
+        #img4 {
+            right: 5px;
+            bottom: 5px;
+        }
+        .box:hover {
+            background-image: url('/image/BackgroundFront.png');
+            background-size: cover; /* 박스 크기에 짧은 쪽을 맞춤 / contain:긴 쪽을 맞춤 */
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <h1>Title</h1>
+    
+    <div id="wrap">
+        <div id="box1" class="box">box-1</div>
+        <div id="box2" class="box">box-2</div>
+        <div id="box3" class="box">box-3</div>
+    </div>
+    
+    <h1>Title2</h1>
+
+    <div id="wrap2">
+        <img src="/image/mini.jpg" class="box" id="img1">
+        <img src="/image/mini.jpg" class="box" id="img2">
+        <img src="/image/mini.jpg" class="box" id="img3">
+        <img src="/image/mini.jpg" class="box" id="img4">
+    </div>
+
+
+</body>
+</html>

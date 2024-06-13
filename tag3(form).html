@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form tag</title>
+</head>
+<body>
+    <h1>form tag2</h1>
+    <form method="get"> <!-- 데이터를 받을 주소(target) action을 생략시 자신에게 전달-->
+        <!-- 보내는방식: get(기본값): 주소, 내용 전부 공개 / 주소 뒤에 내용이 표기 -->
+        <!-- post: 보안 / 서버에서는 get과 post방식을 구분하여 처리함 / 주소 뒤에 내용 표기되지 않음-->
+        <input type="text" name="search">
+        <input type="submit">
+    </form>
+    <hr>
+    <h1>form tag1</h1>
+    <form action="tag.html" method="post">
+        <input type="text" name="search">
+        <input type="submit">
+    </form>
+</body>
+</html>

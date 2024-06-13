@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link</title>
+    <style>
+
+        * {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:visited {
+            color: purple;
+        }
+        a:link { /* href 링크 여부 */
+            color: cornflowerblue;
+        }
+        a:link::after { /*  */
+            content: ' "Link": 'attr(href) /* attr: 함수 / text이후 href의 문자 출력 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>
+        <a>test</a>
+    </h1>
+    <h1>
+        <a href="https://www.naver.com">Naver</a>
+    </h1>
+    <h1>
+        <a href="https://www.google.com">Google</a>
+    </h1>
+    <h1>
+        <a href="https://www.w3.org">WWW</a>
+    </h1>
+    <h1>
+        <a href="https://www.github.com">Github</a>
+    </h1>
+    
+</body>
+</html>

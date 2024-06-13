@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UL</title>
+
+    <style>
+        /* li는 블럭 태그라서 크기 조절이 용이 */
+        ul {
+            /* border: 3px solid #aaa; */
+            list-style: none;
+            overflow: hidden; /* ul에서만 스타일 적용(float) */
+        }
+
+        li {
+            float: left; /* 정렬 */
+            width: 75px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        li:nth-child(2n) { /* 짝수 */
+            background-color: beige;
+        }
+        li:nth-child(2n-1) {
+            background-color: violet;
+        }
+        li:first-child {
+            background-color: aqua;
+            border-radius: 30px 0 0 30px;
+        }
+        li:last-child {
+            background-color: yellow;
+            border-radius: 0 30px 30px 0;
+        }
+
+        /* table {
+            display: none;
+        } */
+        tr:first-child {
+            background-color: aqua;
+        }
+        tr:nth-child(2n) {
+            background-color: bisque;
+        }
+        tr:nth-child(2n-1) {
+            background-color: yellow;
+        }
+        tr:hover {
+            background-color: red;
+        }
+
+        p::first-letter {
+            font-size: 300%;
+        }
+        p::first-line {
+            color: red;
+        }
+        p::selection { /* 글자 드래그(default:파랑) */
+            color: yellow;
+            background-color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>안녕하세요</h1>
+    <p>HELLO</p>
+
+    <hr><br><br><br>
+
+    <table border="1">
+        <tr>
+            <td>11111</td>
+        </tr>
+        <tr>
+            <td>22222</td>
+        </tr>
+        <tr>
+            <td>33333</td>
+        </tr>
+        <tr>
+            <td>44444</td>
+        </tr>
+        <tr>
+            <td>55555</td>
+        </tr>
+        <tr>
+            <td>11111</td>
+        </tr>
+        <tr>
+            <td>22222</td>
+        </tr>
+        <tr>
+            <td>33333</td>
+        </tr>
+        <tr>
+            <td>44444</td>
+        </tr>
+        <tr>
+            <td>55555</td>
+        </tr>
+    </table>
+
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>555</li>
+        <li>666</li>
+        <li>777</li>
+    </ul>
+
+    <div>test</div>
+    
+</body>
+</html>

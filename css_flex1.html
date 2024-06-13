@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex_1</title>
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+        }
+
+        .container {
+            /* width: 600px; */
+            background-color: beige;
+            color: black;
+            /* border: 1px solid red; */
+            height: 150px;
+            margin: 20px 10px;
+            display: flex;
+        }
+        #wrap1 {
+            flex-direction: row;
+        }
+        #wrap2 {
+            flex-direction: row-reverse;
+        }
+        #wrap3 {
+            flex-direction: column;
+        }
+        #wrap4 {
+            flex-direction: column-reverse;
+        }
+        #wrap5 {
+            flex-wrap: nowrap; /* wrap 범위를 벗어날 수 있음(사용 거의 안함) */
+        }
+        #wrap6 {
+            flex-wrap: wrap; /* wrap 범위를 벗어날 수 없음 */
+        }
+        #wrap7 {
+            flex-wrap: wrap-reverse; /* 밀렸을 때 위로 올려줌 */
+        }
+        #wrap8 {
+            flex-flow: row wrap;
+        }
+        #wrap9 {
+            justify-content: flex-start;
+        }
+        #wrap10 {
+            justify-content: flex-end;
+        }
+        #wrap11 {
+            justify-content: center;
+        }
+        #wrap12 {
+            justify-content: space-between; /* box간 간격 일정하게 */
+        }
+        #wrap13 {
+            justify-content: space-around; /* box가 가지는 간격 일정하게 */
+        }
+        #wrap14 {
+            align-items: flex-start;
+        }
+        #wrap15 {
+            align-items: flex-end;
+        }
+        #wrap16 {
+            align-items: center;
+        }
+        #wrap17 {
+            align-items: stretch;
+        }
+
+        .box {
+            background-color: black;
+            color: white;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container" id="wrap17">
+        <div class="box">box-1111</div>
+        <div class="box">box-2222</div>
+        <div class="box">box-3333</div>
+        <div class="box">box-4444</div>
+        <div class="box">box-5555</div>
+        <div class="box">box-6666</div>
+        <div class="box">box-7777</div>
+        <div class="box">box-8888</div>
+        <div class="box">box-9999</div>
+        <div class="box">box-aaaa</div>
+        <div class="box">box-bbbb</div>
+        <div class="box">box-cccc</div>
+        <div class="box">box-dddd</div>
+        <div class="box">box-eeee</div>
+    </div>
+
+    <div class="container" id="wrap16">
+        <div class="box">box-1111</div>
+        <div class="box">box-2222</div>
+        <div class="box">box-3333</div>
+        <div class="box">box-4444</div>
+        <div class="box">box-5555</div>
+        <div class="box">box-6666</div>
+        <div class="box">box-7777</div>
+        <div class="box">box-8888</div>
+        <div class="box">box-9999</div>
+        <div class="box">box-aaaa</div>
+        <div class="box">box-bbbb</div>
+        <div class="box">box-cccc</div>
+        <div class="box">box-dddd</div>
+        <div class="box">box-eeee</div>
+    </div>
+
+    <div class="container" id="wrap15">
+        <div class="box">box-1111</div>
+        <div class="box">box-2222</div>
+        <div class="box">box-3333</div>
+        <div class="box">box-4444</div>
+        <div class="box">box-5555</div>
+        <div class="box">box-6666</div>
+        <div class="box">box-7777</div>
+        <div class="box">box-8888</div>
+        <div class="box">box-9999</div>
+        <div class="box">box-aaaa</div>
+        <div class="box">box-bbbb</div>
+        <div class="box">box-cccc</div>
+        <div class="box">box-dddd</div>
+        <div class="box">box-eeee</div>
+    </div>
+
+    <div class="container" id="wrap14">
+        <div class="box">box-1111</div>
+        <div class="box">box-2222</div>
+        <div class="box">box-3333</div>
+        <div class="box">box-4444</div>
+        <div class="box">box-5555</div>
+        <div class="box">box-6666</div>
+        <div class="box">box-7777</div>
+        <div class="box">box-8888</div>
+        <div class="box">box-9999</div>
+        <div class="box">box-aaaa</div>
+        <div class="box">box-bbbb</div>
+        <div class="box">box-cccc</div>
+        <div class="box">box-dddd</div>
+        <div class="box">box-eeee</div>
+    </div>
+
+    <div class="container" id="wrap13">
+        <div class="box">box-1111</div>
+        <div class="box">box-2222</div>
+        <div class="box">box-3333</div>
+        <div class="box">box-4444</div>
+        <div class="box">box-5555</div>
+        <div class="box">box-6666</div>
+        <div class="box">box-7777</div>
+        <div class="box">box-8888</div>
+        <div class="box">box-9999</div>
+        <div class="box">box-aaaa</div>
+        <div class="box">box-bbbb</div>
+        <div class="box">box-cccc</div>
+        <div class="box">box-dddd</div>
+        <div class="box">box-eeee</div>
+    </div>
+
+    <div class="container" id="wrap12">
+        <div class="box">box-1111</div>
+        <div class="box">box-2222</div>
+        <div class="box">box-3333</div>
+        <div class="box">box-4444</div>
+        <div class="box">box-5555</div>
+        <div class="box">box-6666</div>
+        <div class="box">box-7777</div>
+        <div class="box">box-8888</div>
+        <div class="box">box-9999</div>
+        <div class="box">box-aaaa</div>
+        <div class="box">box-bbbb</div>
+        <div class="box">box-cccc</div>
+        <div class="box">box-dddd</div>
+        <div class="box">box-eeee</div>
+    </div>
+
+    <div class="container" id="wrap11">
+        <div class="box">box-1111</div>
+        <div class="box">box-2222</div>
+        <div class="box">box-3333</div>
+        <div class="box">box-4444</div>
+        <div class="box">box-5555</div>
+        <div class="box">box-6666</div>
+        <div class="box">box-7777</div>
+        <div class="box">box-8888</div>
+        <div class="box">box-9999</div>
+        <div class="box">box-aaaa</div>
+        <div class="box">box-bbbb</div>
+        <div class="box">box-cccc</div>
+        <div class="box">box-dddd</div>
+        <div class="box">box-eeee</div>
+    </div>
+
+    <div class="container" id="wrap10">
+        <div class="box">box-0101</div>
+        <div class="box">box-2222</div>
+        <div class="box">box-3333</div>
+        <div class="box">box-4444</div>
+        <div class="box">box-5555</div>
+        <div class="box">box-6666</div>
+        <div class="box">box-7777</div>
+        <div class="box">box-8888</div>
+        <div class="box">box-9999</div>
+    </div>
+
+    <div class="container" id="wrap9">
+        <div class="box">box-0101</div>
+        <div class="box">box-2222</div>
+        <div class="box">box-3333</div>
+        <div class="box">box-4444</div>
+        <div class="box">box-5555</div>
+        <div class="box">box-6666</div>
+        <div class="box">box-7777</div>
+        <div class="box">box-8888</div>
+        <div class="box">box-9999</div>
+    </div>
+
+    <div class="container" id="wrap8">
+        <div class="box">box-0101</div>
+        <div class="box">box-2222</div>
+        <div class="box">box-3333</div>
+        <div class="box">box-4444</div>
+        <div class="box">box-5555</div>
+        <div class="box">box-6666</div>
+        <div class="box">box-7777</div>
+        <div class="box">box-8888</div>
+        <div class="box">box-9999</div>
+        <div class="box">box-1010</div>
+        <div class="box">box-1111</div>
+        <div class="box">box-1212</div>
+    </div>
+
+    <div class="container" id="wrap7">
+        <div class="box">box-111</div>
+        <div class="box">box-222</div>
+        <div class="box">box-333</div>
+        <div class="box">box-444</div>
+        <div class="box">box-555</div>
+        <div class="box">box-666</div>
+        <div class="box">box-111</div>
+        <div class="box">box-222</div>
+        <div class="box">box-333</div>
+        <div class="box">box-444</div>
+        <div class="box">box-555</div>
+        <div class="box">box-666</div>
+    </div>
+
+    <div class="container" id="wrap6">
+        <div class="box">box-111</div>
+        <div class="box">box-222</div>
+        <div class="box">box-333</div>
+        <div class="box">box-444</div>
+        <div class="box">box-555</div>
+        <div class="box">box-666</div>
+        <div class="box">box-111</div>
+        <div class="box">box-222</div>
+        <div class="box">box-333</div>
+        <div class="box">box-444</div>
+        <div class="box">box-555</div>
+        <div class="box">box-666</div>
+    </div>
+
+    <div class="container" id="wrap5">
+        <div class="box">box-111</div>
+        <div class="box">box-222</div>
+        <div class="box">box-333</div>
+        <div class="box">box-444</div>
+        <div class="box">box-555</div>
+        <div class="box">box-666</div>
+        <div class="box">box-111</div>
+        <div class="box">box-222</div>
+        <div class="box">box-333</div>
+        <div class="box">box-444</div>
+        <div class="box">box-555</div>
+        <div class="box">box-666</div>
+    </div>
+
+    <div class="container" id="wrap4">
+        <div class="box">box-1</div>
+        <div class="box">box-2</div>
+        <div class="box">box-3</div>
+    </div>
+
+    <div class="container" id="wrap3">
+        <div class="box">box-1</div>
+        <div class="box">box-2</div>
+        <div class="box">box-3</div>
+    </div>
+
+    <div class="container" id="wrap2">
+        <div class="box">box-1</div>
+        <div class="box">box-2</div>
+        <div class="box">box-3</div>
+    </div>
+
+    <div class="container" id="wrap1">
+        <div class="box">box-1</div>
+        <div class="box">box-2</div>
+        <div class="box">box-3</div>
+    </div>
+
+
+    
+</body>
+</html>

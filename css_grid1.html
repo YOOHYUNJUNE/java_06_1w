@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid1</title>
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+            
+        }
+
+        .wrap {
+            display: grid;
+            /* grid-template-columns: 200px 200px 200px; */
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: minmax(100px, auto);
+        }
+
+        .wrap1 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 200px을 유지하고, 공간이 없으면 아래로 보냄 */
+            margin-bottom: 20px;
+        }
+
+        .wrap2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            margin-bottom: 20px;
+        }
+
+        .items {
+            padding: 10px;
+            border: 1px solid yellow;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap2">
+        <div class="items">[1] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[2] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[3] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[4] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[5] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[6] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[7] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[8] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[9] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[0] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+    </div>
+
+    <div class="wrap1">
+        <div class="items">[1] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[2] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[3] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[4] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[5] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[6] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[7] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[8] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[9] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[0] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+    </div>
+
+    <div class="wrap">
+        <div class="items">[1] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[2] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[3] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[4] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[5] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[6] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[7] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[8] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[9] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+        <div class="items">[0] KT에 따르면 1인 가구일수록, 나이대가 높아질수록, 남성일수록 귀가 후 TV를 더 빨리 켰다.</div>
+    </div>
+
+    
+</body>
+</html>
