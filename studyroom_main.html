@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좌석 선택</title>
+    <!-- css 파일 -->
+    <link rel="stylesheet" href="./style/layout.css">
+    <!-- 현재 날짜 시간 -->
+    <script>
+        function displayCurrentDateTime() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = (now.getMonth() + 1).toString().padStart(2, '0');
+            const date = now.getDate().toString().padStart(2, '0');
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+
+            const formattedDate = `${year}-${month}-${date}`;
+            const formattedTime = `${hours}:${minutes}:${seconds}`;
+
+            document.getElementById('currentDateTime').innerText = `${formattedDate} ${formattedTime}`;
+        }
+
+        // 매초마다 displayCurrentDateTime 함수를 실행하여 날짜와 시간을 업데이트
+        setInterval(displayCurrentDateTime, 1000);
+    </script>
+    <!-- font 스타일 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        #studyroom_container {
+    margin: 0 auto;
+    padding: 0;
+    width: 800px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.noto-sans {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+header{
+    text-align: center;
+    background-color: #A7E6FF;
+}
+footer {
+    text-align: center;
+    /* background-color: #3572EF; */
+}
+main {
+    /* background-color: #A7E6FF; */
+    display: flex;
+    width: 800px;
+    position: relative;
+}
+
+.content1, .content2, .content3 {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    /* border: 1px solid black; */
+    flex-direction: column;
+    flex: 1;
+}
+
+ul {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+
+#left_ul li {
+    /* float: right; */
+    margin: 2px;
+    width: 60px;
+    height: 60px;
+    background-color: aqua;
+    text-align: center;
+    flex: auto;
+}
+#center_ul li {
+    /* float: left; */
+    margin: 2px;
+    width: 60px;
+    height: 60px;
+    background-color: aqua;
+    text-align: center;
+    flex: auto;
+
+}
+#right_ul li {
+    /* float: left; */
+    margin: 2px;
+    width: 60px;
+    height: 60px;
+    background-color: aqua;
+    text-align: center;
+    flex: auto;
+}
+
+span>h4 {
+    position: absolute;
+    margin-left: 75px;
+}
+span>h5 {
+    font-size: 100%;
+    text-indent: 120px;
+}
+#공백 {
+    background-color: rgba(0, 0, 0, 0);
+}
+#사용가능 {
+    background-color: aqua;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    position: absolute;
+}
+#사용중 {
+    background-color: orangered;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+#사용불가 {
+    background-color: yellow;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+.use {
+    text-align: center;
+    width: 100px;
+    line-height: 100px;
+    background-color: #A7E6FF
+}
+
+/* 미사용(투명) */
+#left_ul>.x {
+    background-color: rgba(0, 0, 0, 0);
+}
+#center_ul>.x {
+    background-color: rgba(0, 0, 0, 0);
+}
+#right_ul>.x {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* 사용중 */
+#left_ul>.using, #left_ul>a>.using {
+    background-color: orangered;
+}
+#center_ul>.using {
+    background-color: orangered;
+}
+
+#right_ul>.using {
+    background-color: orangered;
+}
+
+/* 사용불가 */
+#left_ul>.break {
+    background-color: yellow;
+}
+#center_ul>.break {
+    background-color: yellow;
+}
+#right_ul>.break, #right_ul>a>.break {
+    background-color: yellow;
+}
+
+/* 좌석 링크 text */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* 입출구 */
+.content2 #left_door {
+    background-color: #3572EF;
+    border-radius: 0 0 100% 0;
+}
+.content2 #right_door {
+    background-color: #3572EF;
+    border-radius: 0 0 0 100%;
+}
+
+#현황 {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    /* border: 1px solid black; */
+}
+
+#내정보 {
+    width: 180px;
+    text-align: center;
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    border: 1px solid black;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container ff-noto-sans">
+        <!-- 헤더 부분 -->
+        <header>
+            <div class="logo-box">
+                <h1>Kosta logo</h1>
+            </div>
+            <div>
+                <h1><span id="currentDateTime" class="ff-noto-sans"></span></h1>
+            </div>
+        </header>
+
+        <!-- 메인 부분 -->
+        <main>
+            <div class="content1">
+                <span>
+                    <h4 id="공백"></h4>
+                    <h4 id="사용가능"></h4>
+                    <h5>사용가능</h5>
+                </span>
+                <ul id="left_ul">
+                    <a href="/studyroom_detail.html"><li>1</li></a>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li>5</li>
+                    <a href="/studyroom_using.html"><li class="using">6<br>김XX</li></a>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="using">13<br>이XX</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li class="using">16<br>김XX</li>
+                    <li class="using">17<br>박XX</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                </ul>
+            </div>
+                
+            <div class="content2">
+                <span>
+                    <h4 id="사용중"></h4>
+                    <h5>사용중</h5>
+                </span>
+                <ul id="center_ul">
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <li>24</li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li>25</li>
+                    <li>26</li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li>27</li>
+                    <li>28</li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li>29</li>
+                    <li>30</li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li id="left_door">입</li>
+                    <li id="right_door">구</li>
+                    <li class="x"></li>
+
+                </ul>
+            </div>
+
+            <div class="content3">
+                <span>
+                    <h4 id="사용불가"></h4>
+                    <h5>사용불가</h5>
+                </span>
+                <ul id="right_ul">
+                    <li>31</li>
+                    <li>32</li>
+                    <li class="using">33<br>김XX</li>
+                    <li class="using">34<br>박XX</li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li>35</li>
+                    <li>36</li>
+                    <li>37</li>
+                    <li>38</li>
+                    <li>39</li>
+                    <li class="using">40<br>김XX</li>
+                    <li>41</li>
+                    <li class="using">42<br>이XX</li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <a href="/studyroom_break.html"><li class="break">43<br>수리중</li></a>
+                    <li class="break">44<br>수리중</li>
+                    <li class="break">45<br>수리중</li>
+                    <li class="break">46<br>수리중</li>
+                    <li>47</li>
+                    <li class="using">48<br>임XX</li>
+                    <li>49</li>
+                    <li>50</li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                    <li class="x"></li>
+                </ul>
+
+            <a href="/studyroom_info.html" id="내정보링크">
+                <span id="내정보">
+                        <p id="info">내 좌석 정보보기</p>
+                    </span>
+            </a>
+                <span id="현황">
+                    <p id="좌석수">사용 가능 좌석 : 37 / 50</p>
+                </span>
+            </div>
+
+        </main>
+
+        <!-- 푸터 부분 -->
+        <footer>
+            <div>
+                
+            </div>
+            <div>
+                <a href="/layout.html">
+                    <img class="home-btn" src="./image/home.svg" alt="home">
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img class="home-btn" src="./image/undo.svg" alt="home">
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
